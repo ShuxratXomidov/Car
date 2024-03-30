@@ -1,0 +1,29 @@
+@model List<Chevrolet>
+
+    @{
+        ViewData["Title"]="Списка авто";
+    }
+
+<table class="table">
+    <tr>
+        <th>Id</th>
+        <th>Name</th>
+        <th>Year</th>
+        <th>Country</th>
+        <th>Edit</th>
+        <th>Delete</th>
+    </tr>
+    @foreach(var car in Model)
+    {
+        <tr>
+            <td>@car.Id</td>
+            <td>@car.Name</td>
+            <td>@car.Year</td>
+            <td>@car.Country</td>
+            <td><a asp-controller="Chevrolet" asp-action="Edit" asp-route-id="@car.Id">Изминить</a></td>
+            <td><a asp-controller="Chevrolet" asp-action="Delete" asp-route-id="@car.Id">Удалить</a></td>
+        </tr>
+    }
+</table>
+
+<button class="btn btn-outline-danger"><a asp-controller="Chevrolet" asp-action="Create">Create Car</a></button>

@@ -1,0 +1,28 @@
+@model Chevrolet;
+
+@{
+    ViewData["Title"]="Добавить авто";
+}
+
+<div class="col-6">
+    <form asp-controller="Chevrolet" asp-action="Store">
+        <div class="mb-3">
+            <label for="Name">Mashinaning nomi:</label>
+            <input type="text" name="Name" class="form-control">
+        </div>
+        <div class="mb-3">
+            <label for="Year">Ishlab chiqarilgan yili:</label>
+            <input type="number" name="Year" class="form-control">
+        </div>
+        <div class="mb-3">
+            <label for="Country">Davlat:</label>
+            <select name="Country" id="Country" class="form-select">
+                <option value="uzb">uzbekistan</option>
+                <option value="rus">russia</option>
+                <option value="usa">usa</option>
+                <option value="france">france</option>
+            </select>
+        </div>
+        <button type="submit" class="btn btn-success">добавить</button>
+    </form>
+</div>

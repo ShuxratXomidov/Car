@@ -1,0 +1,38 @@
+@model List<User>
+
+    @{
+        ViewData["Title"]="Списка user";
+    }
+
+<table class="table">
+    <tr>
+        <th>T/r</th>
+        <th>Id</th>
+        <th>FirstName</th>
+        <th>LastName</th>
+        <th>Email</th>
+        <th>Password</th>
+    </tr>
+    @* @foreach(var user in Model)
+    {
+        <tr>
+            <td>@user.Id</td>
+            <td>@user.FirstName</td>
+            <td>@user.LastName</td>
+            <td>@user.Email</td>
+            <td>@user.Password</td>
+        </tr>
+    } *@
+
+    @for(int i = 1; i < Model.Count(); i++)
+    {
+        <tr>
+            <td>@i</td>
+            <td>@Model[i-1].Id</td>
+            <td>@Model[i-1].FirstName</td>
+            <td>@Model[i-1].LastName</td>
+            <td>@Model[i-1].Email</td>
+            <td>@Model[i-1].Password</td>
+        </tr>
+    }
+</table>
